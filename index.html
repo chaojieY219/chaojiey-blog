@@ -1,28 +1,86 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>chaojiey's blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="styles/styles.css" />
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>欢迎来到我的播客</h1>
-            <p>这里是你的播客简介...</p>
-        </header>
-        <div class="audio-player">
-            <audio controls>
-                <source src="your-podcast-episode.mp3" type="audio/mpeg">
-                您的浏览器不支持音频播放。
-            </audio>
-        </div>
-        <!-- 你可以在这里添加更多的播客剧集 -->
-    </div>
-
-    <script>
-        // 如果你想要添加一些简单的JavaScript来控制音频播放，可以在这里写
+    <title>超杰的个人网站 - Chaojie's Personal Website</title>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = {
+            darkMode: "class",
+        }
     </script>
-</body>
+
+</head>
+
+<body>
+
+    <body id="classic-website" class="mt-main-index one-column">
+
+        <main>
+            <div
+                class="relative flex flex-col h-[100vh] items-center justify-center bg-white dark:bg-black transition-bg">
+                <div class="absolute inset-0 overflow-hidden">
+                    <div class="jumbo absolute -inset-[10px] opacity-50"></div>
+                </div>
+                <div id="header">
+                    <h1
+                        class="relative flex items-center text-5xl font-bold text-gray-800 dark:text-white dark:opacity-80 transition-colors">
+                        超杰
+                        <span class="ml-1 rounded-xl bg-current p-2 text-[0.7em] leading-none">
+                            <span class="text-white dark:text-black">个人网站</span>
+                        </span>
+                    </h1>
+                    <p class="py-2 relative flex items-center text-gray-800 dark:text-white dark:opacity-80 transition-colors">
+                        Chaojie's Personal Website</p>
+                </div>
+                <div>
+                    <div id="content" class="px-10 py-2 border border-stone-200 rounded-xl drop-shadow-sm text-sm text-stone-800 dark:text-white bg-white/40 dark:bg-black/40 backdrop-blur-lg hover:border-stone-300 transition-colors dark:border-stone-500 dark:hover:border-stone-400">
+                        <div id="content-inner">
+                            <div id="alpha">
+                                <div id="alpha-inner">
+                                    <div id="page-alpha">
+                                        <p
+                                            class="relative flex items-center text-gray-800 dark:text-white dark:opacity-80 transition-colors">
+                                            » <a href="#">个人动态</a> </p>
+                                        <p
+                                            class="relative flex items-center text-gray-800 dark:text-white dark:opacity-80 transition-colors">
+                                            » <a href="#">小项目</a> </p>
+                                        <p
+                                            class="relative flex items-center text-gray-800 dark:text-white dark:opacity-80 transition-colors">
+                                            » <a href="#">待更新...</a> </p>
+                                    </div>
+                                    <div id="up-arrow"></div>
+                                    <div id="page-beta">
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="beta">
+                                <div id="beta-inner">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <button onclick="toggleTheme()"
+                        class="px-3 py-1 border border-stone-200 rounded-full drop-shadow-sm text-sm text-stone-800 dark:text-white bg-white/40 dark:bg-black/40 backdrop-blur-lg hover:border-stone-300 transition-colors dark:border-stone-500 dark:hover:border-stone-400">Toggle
+                        Theme</button>
+                </div>
+                <div id="footer" >
+                    <p
+                        class="py-5 relative flex items-center text-gray-800 dark:text-white dark:opacity-80 transition-colors">
+                        走起来，风景才会变。</p>
+                </div>
+            </div>
+        </main>
+
+    </body>
+
+
 </html>

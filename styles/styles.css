@@ -1,0 +1,146 @@
+/*
+NOTE: This is just an experiment and
+      could use some changes to improve performance:
+
+https://x.com/actualTimWilson/status/1730753841795158313
+
+See a production optimized version here: https://charmui.com
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+body {
+    font-family: Inter, sans-serif;
+}
+
+@keyframes jumbo {
+    from {
+        background-position: 50% 50%, 50% 50%;
+    }
+    to {
+        background-position: 350% 50%, 350% 50%;
+    }
+}
+
+.jumbo {
+    --stripes: repeating-linear-gradient(
+        100deg,
+        #fff 0%,
+        #fff 7%,
+        transparent 10%,
+        transparent 12%,
+        #fff 16%
+    );
+    --stripesDark: repeating-linear-gradient(
+        100deg,
+        #000 0%,
+        #000 7%,
+        transparent 10%,
+        transparent 12%,
+        #000 16%
+    );
+    --rainbow: repeating-linear-gradient(
+        100deg,
+        #60a5fa 10%,
+        #e879f9 15%,
+        #60a5fa 20%,
+        #5eead4 25%,
+        #60a5fa 30%
+    );
+    background-image: var(--stripes), var(--rainbow);
+    background-size: 300%, 200%;
+    background-position: 50% 50%, 50% 50%;
+
+    filter: blur(10px) invert(100%);
+
+    mask-image: radial-gradient(ellipse at 100% 0%, black 40%, transparent 70%);
+
+    pointer-events: none;
+}
+
+.jumbo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--stripes), var(--rainbow);
+    background-size: 200%, 100%;
+    animation: jumbo 60s linear infinite;
+    background-attachment: fixed;
+    mix-blend-mode: difference;
+}
+
+.dark .jumbo {
+    background-image: var(--stripesDark), var(--rainbow);
+    filter: blur(10px) opacity(50%) saturate(200%);
+}
+.dark .jumbo::after {
+    background-image: var(--stripesDark), var(--rainbow);
+}
+
+
+@media (max-width: 600px) {
+    .element {
+        margin: 10px;
+    }
+}
+
+.element {
+    margin-top: 20px;    /* 上边距 */
+    margin-right: 15px;  /* 右边距 */
+    margin-bottom: 20px; /* 下边距 */
+    margin-left: 15px;   /* 左边距 */
+    /* 或简写为：margin: 20px 15px; */
+}
+
+.container {
+    margin: 0 auto; /* 水平居中 */
+}
+
+@media (max-width: 600px) {
+    .responsive-element {
+        margin: 10px; /* 在窄屏幕上的边距 */
+    }
+}
+
+
+ .container {
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+	border:1px solid rgba(255,255,255,.3); 
+    background: url(http://ianfarb.com/wp-content/uploads/2013/10/nicholas-hodag.jpg);
+    box-shadow: inset 1px 1px 40px 0 rgba(0, 0, 0, 0.55);
+    overflow: hidden;
+
+}
+.box-footer{
+    margin: 10px;
+    padding: 10px;
+}
+
+.container {
+    border: 1px  ;
+    padding: 15px;
+} 
+
+/* .box {
+    background: rgba(0, 0, 0, 0.75);
+    text-align: center;
+    padding: 45px 0 66px 0;
+    opacity: 0;
+    -webkit-transition: opacity 0.25s ease;
+    -moz-transition: opacity 0.25s ease;
+  } */
+/* 
+  box {
+    width: 300px;
+    height: 200px;
+    box-shadow: inset 1px 1px 40px 0 rgba(0, 0, 0, 0.45);
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    margin: 5% auto 0 auto;
+    background: url(http://ianfarb.com/wp-content/uploads/2013/10/nicholas-hodag.jpg);
+    background-size: cover;
+    border-radius: 5px;
+    overflow: hidden;
+  } */
